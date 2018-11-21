@@ -1,0 +1,13 @@
+CC=g++
+exe=main_grocery
+
+$(exe): main_grocery.o Items.o List.o 
+	$(CC) main_grocery.o Items.o List.o  -o $(exe)
+main_grocery.o: main_grocery.cpp
+	$(CC) -c main_grocery.cpp
+Items.o: Items.cpp
+	$(CC) -c Items.cpp
+List.o: List.cpp
+	$(CC) -c List.cpp
+clean:
+	rm -f a.out $(exe) *.o
